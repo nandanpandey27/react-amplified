@@ -1,0 +1,15 @@
+type Video @model @key(name: "byCourse", fields: ["courseID"]) @auth(rules: [{allow: groups, groups: ["admin"], operations: [read, create, update, delete]}, {allow: groups, groups: ["authenticated"], operations: [read]}]) {
+  id: ID!
+  title: String!
+  description: String
+  order: Int
+  courseID: ID
+}
+
+type Course @model @auth(rules: [{allow: groups, groups: ["admin"], operations: [read, create, update, delete]}, {allow: groups, groups: ["authenticated"], operations: [read]}]) {
+  id: ID!
+  title: String!
+  description: String
+  videos: [Video] @connection(keyName: "byCourse", fields: ["id"])
+}
+ 

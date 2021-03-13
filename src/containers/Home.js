@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 import { DataStore } from '@aws-amplify/datastore';
 import { Course } from './../models';
 import CourseList from './../components/CourseList'
@@ -26,4 +27,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default withAuthenticator(Home);
