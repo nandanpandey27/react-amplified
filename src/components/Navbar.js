@@ -7,7 +7,7 @@ const Navbar = () => (
       <NavLink exact activeClassName="is-active" className="navbar-item" to="/">
         <h1>Courses</h1>
       </NavLink>
-      <NavLink exact activeClassName="is-active" className="navbar-item" to="/create">
+      <NavLink exact activeClassName="is-active" className="navbar-item" to="/course/create">
         <h1>Create</h1>
       </NavLink>
     </div>

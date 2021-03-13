@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
+
 const CourseList = ({courses = []}) => {
   const mappedCourses = courses.map((course, index) => (
-    <a key={index} className="panel-block is-active" href="#">
+    <Link to={`/course/${course.id}`} key={index} className="panel-block">
       {course.title}
-    </a>
+    </Link>
   ));
 
   return (

@@ -6,6 +6,7 @@ import {
 import Navbar from './components/Navbar'
 import Home from './containers/Home'
 import Create from './containers/Create'
+import CourseDetails from './containers/CourseDetails'
 import './App.css';
 
 function App() {
@@ -14,8 +15,11 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/create">
+          <Route exact path="/course/create">
             <Create />
+          </Route>
+          <Route path="/course/:id">
+            <CourseDetails />
           </Route>
           <Route exact path="/">
             <Home />
